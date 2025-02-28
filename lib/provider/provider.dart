@@ -3,7 +3,6 @@ import '../api_service.dart';
 import '../person.dart';
 
 class PersonProvider extends ChangeNotifier {
-  final ApiService _apiService = ApiService();
   List<Person> _persons = [];
   bool _isLoading = false;
   int _fetchAttempts = 0;
