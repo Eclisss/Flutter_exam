@@ -1,0 +1,35 @@
+name: flutter_exam
+description: "A new Flutter project created by Mary Margarette Mariano."
+
+
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.6
+  provider: ^6.1.2
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.14.3
+
+flutter_icons:
+  android: true
+  ios: true
+  web: true
+  image_path: "assets/icon/contacts.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - lib/assets/icon/contacts.png
