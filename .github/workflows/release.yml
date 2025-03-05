@@ -1,4 +1,4 @@
-name: Build & Release APK
+name: Flutter Build & Release APK
 
 on:
   push:
@@ -11,12 +11,19 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated to latest version
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'stable'
+          flutter-version: 3.13.0  # Specify a valid Flutter version
+          channel: stable
+
+      - name: Install Dependencies
+        run: flutter pub get  # Ensures all dependencies are installed
+
+      - name: Verify Flutter Installation
+        run: flutter doctor  # Debugging step to check Flutter setup
 
       - name: Build APK
         run: flutter build apk --release
@@ -27,4 +34,3 @@ jobs:
           files: build/app/outputs/flutter-apk/app-release.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
